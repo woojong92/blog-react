@@ -13,8 +13,8 @@ const printInfo = ctx => {
 
 posts.get('/', postsCtrl.list)
 posts.post('/', postsCtrl.write)
-posts.get('/:id', postsCtrl.read)
-posts.delete('/:id', postsCtrl.remove)
-posts.patch('/:id', postsCtrl.update)
+posts.get('/:id', postsCtrl.checkObjectId, postsCtrl.read)
+posts.delete('/:id', postsCtrl.checkObjectId, postsCtrl.remove)
+posts.patch('/:id', postsCtrl.checkObjectId, postsCtrl.update)
 
 export default posts
